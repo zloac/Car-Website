@@ -1,0 +1,26 @@
+
+.body, main, .card.shadow-sm{
+    background: #212529;
+}
+.nav-link.px-2{
+    color:white;
+}
+
+.nav-link.px-2:hover{
+    color: gray;
+}
+.carousel-indicators [data-bs-target]{
+    height: 10px;
+}
+.card{
+    --bs-card-border-color: #212529;
+    --bs-card-bg:#495057;
+}
+.row.m-l-0.m-r-0{
+    padding-top: 50px;
+}
+.nav{
+    --bs-nav-link-color: white!important;
+    --bs-nav-link-hover-color: gray!important;
+}
+

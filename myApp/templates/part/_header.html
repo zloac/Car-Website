@@ -1,0 +1,55 @@
+
+<header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'index' %}" class="nav-link px-2 text-secondary">Anasayfa</a></li>
+          <li><a href="#" id="asd" class="nav-link px-2">Yenilikler</a></li>
+          <li><a href="#" class="nav-link px-2">Fiyatlar</a></li>
+          <li><a href="#" class="nav-link px-2">FAQ</a></li>
+          <li><a href="#" class="nav-link px-2">Hakkında</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end d-flex">
+
+          {% if user.is_authenticated %}
+          
+          <div class="btn btn-secondary">
+            <a href="{% url 'sepet' %}"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Uploaded to svgrepo.com" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+              <style type="text/css">
+                .stone_een{fill:#0B1719;}
+              </style>
+              <path class="stone_een" d="M27.857,27.864C27.935,29.572,26.571,31,24.861,31H7.139c-1.71,0-3.075-1.428-2.997-3.136L4.957,9.955  C4.981,9.42,5.421,9,5.956,9h20.089c0.535,0,0.975,0.42,0.999,0.955L27.857,27.864z M16.185,1.003C12.787,0.901,10,3.625,10,7v1h2V7  c0-2.209,1.791-4,4-4s4,1.791,4,4v1h2V7.252C22,3.966,19.468,1.101,16.185,1.003z"/>
+              </svg>
+          </a></div>
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hoşgeldin {{ user }}
+              </a>
+            
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profil</a></li>
+                <li><a class="dropdown-item" href="{% url 'changepassword' %}">Şifre Değiştir</a></li>
+                <li><a class="dropdown-item" href="{% url 'userLogout' %}">Çıkış yap</a></li>
+              </ul>
+            </div>
+
+          {% else %}
+          <a href="{% url 'userLogin' %}" type="button" class="btn btn-outline-light me-2">Giriş yap</a>
+          <a type="button" href="{% url 'userRegister' %}" class="btn btn-warning">Kayıt ol</a>  
+
+          {% endif %}
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
